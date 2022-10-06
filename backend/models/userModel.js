@@ -3,7 +3,7 @@ const userSchema = mongoose.Schema(
   {
     // required means that this field is compulsory
     name: { type: String, required: true },
-    email: { type: String, required: true },
+    email: { type: String, required: true, unique:true },
     password: { type: String, required: true },
     pic: {
       type: String,
