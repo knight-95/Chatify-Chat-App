@@ -60,7 +60,7 @@ const Login = () => {
             setPassword("123456");
         }}
       >
-        Get Guest User Credentials
+        Use Guest User Credentials
       </Button>
     </VStack>
   );
