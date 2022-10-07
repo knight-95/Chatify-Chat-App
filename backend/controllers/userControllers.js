@@ -5,10 +5,12 @@ const asyncHandler = require("express-async-handler");
 
 const registerUser = asyncHandler(async (req, res) => {
   const { name, email, password, pic } = req.body;
+
   if (!name || !email || !password) {
     res.status(400);
-    throw new Error("Please enter all the fiels");
+    throw new Error("Please enter all the fields");
   }
+  // Here, "User" is the model that we have created
   const userExists = await User.findOne({ email });
   if (userExists) {
     res.status(400);
@@ -34,7 +36,7 @@ const registerUser = asyncHandler(async (req, res) => {
     });
   }else{
     res.status(400);
-    throw new Error("Failed to crete the User");
+    throw new Error("Failed to create the User");
   }
 });
 
