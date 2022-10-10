@@ -1,10 +1,14 @@
 const express = require('express');
 const { chats } = require('./data/data');
+// const dotenv = require('dotenv');
+
 const dotenv = require('dotenv');
+dotenv.config({ path: '../../../.env' });
+
 const connectDB = require('./config/db');
 const app = express();
 const userRoutes = require('./routes/userRoutes')
-dotenv.config();
+// dotenv.config();
 connectDB();
 
 app.use(express.json()); //to accept json data
@@ -23,4 +27,5 @@ app.get('/', (req,res) => {
 app.use('/api/user',userRoutes)
 
 const PORT = process.env.PORT;
-app.listen(5000,console.log("`Server started on PORT 5000`"));
+console.log(process.env.NAME);
+app.listen(5000,console.log(`Server started on PORT 5000`));
