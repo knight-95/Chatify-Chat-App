@@ -5,10 +5,10 @@
   "main": "server.js",
   "scripts": {
     "start": "node ./backend/server.js",
-    "install": "npm i --prefix ./frontend",
+    "install": "cd ./frontend && npm install && cd ../backend && npm install",
     "server": "nodemon ./backend/server.js",
     "client": "npm start --prefix ./frontend",
-    "dev": "concurrently  \"npm run install\" \"npm run server\" \"npm run client\""
+    "dev": "concurrently  \"npm run server\" \"npm run client\" "
   },
   "author": "Yash Gupta",
   "license": "ISC",
