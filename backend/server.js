@@ -3,6 +3,7 @@ const { chats } = require('./data/data');
 const dotenv = require('dotenv');
 const connectDB = require('./config/db');
 const app = express();
+// const mongo ;
 const userRoutes = require('./routes/userRoutes')
 dotenv.config();
 connectDB();
